@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,8 +38,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+            <a href="#" panel-name="suite-SauceDemo_Suite" class="navigator-link">
+              <span class="suite-name border-failed">SauceDemo Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,37 +49,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
+                  <a href="#" panel-name="test-xml-SauceDemo_Suite" class="navigator-link ">
                     <span>C:\Users\modiy\eclipse-workspace\sauce-demo-automation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                  <a href="#" panel-name="testlist-SauceDemo_Suite" class="navigator-link ">
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-Suite" class="navigator-link ">
+                  <a href="#" panel-name="group-SauceDemo_Suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-Suite" class="navigator-link ">
+                  <a href="#" panel-name="times-SauceDemo_Suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-Suite" class="navigator-link ">
+                  <a href="#" panel-name="reporter-SauceDemo_Suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-Suite" class="navigator-link ">
+                  <a href="#" panel-name="ignored-methods-SauceDemo_Suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-Suite" class="navigator-link ">
+                  <a href="#" panel-name="chronological-SauceDemo_Suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -92,46 +92,145 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">24 methods, 1 failed,   23 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-SauceDemo_Suite" class="hide-methods failed suite-SauceDemo_Suite"> (hide)</a> <!-- hide-methods failed suite-SauceDemo_Suite -->
+                      <a href="#" panel-name="suite-SauceDemo_Suite" class="show-methods failed suite-SauceDemo_Suite"> (show)</a> <!-- show-methods failed suite-SauceDemo_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-SauceDemo_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CheckoutTests" class="method navigator-link" hash-for-method="checkoutValidationTest(Ravi, , 395001, Error: Last Name is required)">checkoutValidationTest(Ravi, , 395001, Error: Last Name is required)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-SauceDemo_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-SauceDemo_Suite" class="hide-methods passed suite-SauceDemo_Suite"> (hide)</a> <!-- hide-methods passed suite-SauceDemo_Suite -->
+                      <a href="#" panel-name="suite-SauceDemo_Suite" class="show-methods passed suite-SauceDemo_Suite"> (show)</a> <!-- show-methods passed suite-SauceDemo_Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content passed suite-SauceDemo_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.ProductTests" class="method navigator-link" hash-for-method="addProductToCart">addProductToCart</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CartTests" class="method navigator-link" hash-for-method="addMultipleProductsToCart">addMultipleProductsToCart</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="emptyUsernameTest">emptyUsernameTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CartTests" class="method navigator-link" hash-for-method="addMultipleProductsToCart">addMultipleProductsToCart</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidPasswordTest">invalidPasswordTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.ProductTests" class="method navigator-link" hash-for-method="addProductToCart">addProductToCart</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.ProductTests" class="method navigator-link" hash-for-method="removeProductFromCart">removeProductFromCart</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.ProductTests" class="method navigator-link" hash-for-method="addProductToCart">addProductToCart</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLoginTest">validLoginTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CheckoutTests" class="method navigator-link" hash-for-method="checkoutValidationTest(Ravi, Test, , Error: Postal Code is required)">checkoutValidationTest(Ravi, Test, , Error: Postal Code is required)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.ProductTests" class="method navigator-link" hash-for-method="verifyProductPage">verifyProductPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CheckoutTests" class="method navigator-link" hash-for-method="checkoutValidationTest(, Test, 395001, Error: First Name is required)">checkoutValidationTest(, Test, 395001, Error: First Name is required)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CheckoutTests" class="method navigator-link" hash-for-method="checkoutValidationTest(, Test, 395001, Error: First Name is required)">checkoutValidationTest(, Test, 395001, Error: First Name is required)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CheckoutTests" class="method navigator-link" hash-for-method="checkoutValidationTest(Ravi, , 395001, Error: Last Name is required)">checkoutValidationTest(Ravi, , 395001, Error: Last Name is required)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CheckoutTests" class="method navigator-link" hash-for-method="checkoutValidationTest(Ravi, Test, , Error: Postal Code is required)">checkoutValidationTest(Ravi, Test, , Error: Postal Code is required)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="emptyUsernameTest">emptyUsernameTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="emptyUsernameTest">emptyUsernameTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidPasswordTest">invalidPasswordTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidPasswordTest">invalidPasswordTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.ProductTests" class="method navigator-link" hash-for-method="removeProductFromCart">removeProductFromCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CartTests" class="method navigator-link" hash-for-method="removeProductFromCart">removeProductFromCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CartTests" class="method navigator-link" hash-for-method="removeProductFromCart">removeProductFromCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.ProductTests" class="method navigator-link" hash-for-method="removeProductFromCart">removeProductFromCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLoginTest">validLoginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLoginTest">validLoginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CartTests" class="method navigator-link" hash-for-method="verifyAddedProductInCart">verifyAddedProductInCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CartTests" class="method navigator-link" hash-for-method="verifyAddedProductInCart">verifyAddedProductInCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.ProductTests" class="method navigator-link" hash-for-method="verifyProductPage">verifyProductPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.ProductTests" class="method navigator-link" hash-for-method="verifyProductPage">verifyProductPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-SauceDemo_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -142,13 +241,153 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+        <div panel-name="suite-SauceDemo_Suite" class="panel SauceDemo_Suite">
+          <div class="suite-SauceDemo_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.CheckoutTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkoutValidationTest(Ravi, , 395001, Error: Last Name is required)">
+                  </a> <!-- checkoutValidationTest(Ravi, , 395001, Error: Last Name is required) -->
+                  <span class="method-name">checkoutValidationTest</span>
+                  <span class="parameters">(Ravi,,395001,Error: Last Name is required)</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.cssSelector: [data-test=&apos;error&apos;], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[data-test=&apos;error&apos;]&quot;}.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.49.0&apos;, revision: &apos;bedb24f bedb24f6f703876e7e4c5d506f0d697eb358c720&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 153.0.8010.55, chrome: {chromedriverVersion: 153.0.8010.52 (78e5e45d4bb4..., userDataDir: C:\Users\modiy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:11302}, goog:processID: 14436, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:11302/devtoo..., se:cdpVersion: 153.0.8010.55, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:cmtgKey: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5bdedbf27b703e45be7e6c1ef8b80bdd
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at utils.WaitUtils.waitForVisibility(WaitUtils.java:24)
+	at pages.CheckoutPage.getErrorMessage(CheckoutPage.java:93)
+	at tests.CheckoutTests.checkoutValidationTest(CheckoutTests.java:40)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 15 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SauceDemo_Suite-class-failed -->
+          <div class="suite-SauceDemo_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.CartTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addMultipleProductsToCart">
+                  </a> <!-- addMultipleProductsToCart -->
+                  <span class="method-name">addMultipleProductsToCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="addMultipleProductsToCart">
+                  </a> <!-- addMultipleProductsToCart -->
+                  <span class="method-name">addMultipleProductsToCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="removeProductFromCart">
+                  </a> <!-- removeProductFromCart -->
+                  <span class="method-name">removeProductFromCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="removeProductFromCart">
+                  </a> <!-- removeProductFromCart -->
+                  <span class="method-name">removeProductFromCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddedProductInCart">
+                  </a> <!-- verifyAddedProductInCart -->
+                  <span class="method-name">verifyAddedProductInCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddedProductInCart">
+                  </a> <!-- verifyAddedProductInCart -->
+                  <span class="method-name">verifyAddedProductInCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SauceDemo_Suite-class-passed -->
+          <div class="suite-SauceDemo_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.CheckoutTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkoutValidationTest(Ravi, Test, , Error: Postal Code is required)">
+                  </a> <!-- checkoutValidationTest(Ravi, Test, , Error: Postal Code is required) -->
+                  <span class="method-name">checkoutValidationTest</span>
+                  <span class="parameters">(Ravi,Test,,Error: Postal Code is required)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkoutValidationTest(, Test, 395001, Error: First Name is required)">
+                  </a> <!-- checkoutValidationTest(, Test, 395001, Error: First Name is required) -->
+                  <span class="method-name">checkoutValidationTest</span>
+                  <span class="parameters">(,Test,395001,Error: First Name is required)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkoutValidationTest(, Test, 395001, Error: First Name is required)">
+                  </a> <!-- checkoutValidationTest(, Test, 395001, Error: First Name is required) -->
+                  <span class="method-name">checkoutValidationTest</span>
+                  <span class="parameters">(,Test,395001,Error: First Name is required)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkoutValidationTest(Ravi, , 395001, Error: Last Name is required)">
+                  </a> <!-- checkoutValidationTest(Ravi, , 395001, Error: Last Name is required) -->
+                  <span class="method-name">checkoutValidationTest</span>
+                  <span class="parameters">(Ravi,,395001,Error: Last Name is required)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkoutValidationTest(Ravi, Test, , Error: Postal Code is required)">
+                  </a> <!-- checkoutValidationTest(Ravi, Test, , Error: Postal Code is required) -->
+                  <span class="method-name">checkoutValidationTest</span>
+                  <span class="parameters">(Ravi,Test,,Error: Postal Code is required)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SauceDemo_Suite-class-passed -->
+          <div class="suite-SauceDemo_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">tests.ProductTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addProductToCart">
+                  </a> <!-- addProductToCart -->
+                  <span class="method-name">addProductToCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="addProductToCart">
@@ -165,19 +404,40 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="removeProductFromCart">
+                  </a> <!-- removeProductFromCart -->
+                  <span class="method-name">removeProductFromCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyProductPage">
+                  </a> <!-- verifyProductPage -->
+                  <span class="method-name">verifyProductPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="verifyProductPage">
                   </a> <!-- verifyProductPage -->
                   <span class="method-name">verifyProductPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
+          </div> <!-- suite-SauceDemo_Suite-class-passed -->
+          <div class="suite-SauceDemo_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">tests.LoginTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyUsernameTest">
+                  </a> <!-- emptyUsernameTest -->
+                  <span class="method-name">emptyUsernameTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="emptyUsernameTest">
@@ -194,15 +454,29 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="invalidPasswordTest">
+                  </a> <!-- invalidPasswordTest -->
+                  <span class="method-name">invalidPasswordTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validLoginTest">
+                  </a> <!-- validLoginTest -->
+                  <span class="method-name">validLoginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="validLoginTest">
                   </a> <!-- validLoginTest -->
                   <span class="method-name">validLoginTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-        </div> <!-- panel Suite -->
-        <div panel-name="test-xml-Suite" class="panel">
+          </div> <!-- suite-SauceDemo_Suite-class-passed -->
+        </div> <!-- panel SauceDemo_Suite -->
+        <div panel-name="test-xml-SauceDemo_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">C:\Users\modiy\eclipse-workspace\sauce-demo-automation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
@@ -210,101 +484,190 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Chrome Tests&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;SauceDemo Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;listeners.ExtentReportListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Chrome Tests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.LoginTests&quot;/&gt;
       &lt;class name=&quot;tests.ProductTests&quot;/&gt;
+      &lt;class name=&quot;tests.CartTests&quot;/&gt;
+      &lt;class name=&quot;tests.CheckoutTests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Chrome Tests --&gt;
-&lt;/suite&gt; &lt;!-- Suite --&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Firefox Tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.LoginTests&quot;/&gt;
+      &lt;class name=&quot;tests.ProductTests&quot;/&gt;
+      &lt;class name=&quot;tests.CartTests&quot;/&gt;
+      &lt;class name=&quot;tests.CheckoutTests&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Firefox Tests --&gt;
+&lt;/suite&gt; &lt;!-- SauceDemo Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Suite" class="panel">
+        <div panel-name="testlist-SauceDemo_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Suite</span>
+            <span class="header-content">Tests for SauceDemo Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Chrome Tests (2 classes)</span>
+                <span class="test-name">Chrome Tests (4 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">Firefox Tests (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Suite" class="panel">
+        <div panel-name="group-SauceDemo_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Suite</span>
+            <span class="header-content">Groups for SauceDemo Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Suite" class="panel">
+        <div panel-name="times-SauceDemo_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Suite</span>
+            <span class="header-content">Times for SauceDemo Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Suite');
-function tableData_Suite() {
+suiteTableInitFunctions.push('tableData_SauceDemo_Suite');
+function tableData_SauceDemo_Suite() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(24);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'removeProductFromCart')
-data.setCell(0, 2, 'tests.ProductTests')
-data.setCell(0, 3, 449);
+data.setCell(0, 1, 'checkoutValidationTest')
+data.setCell(0, 2, 'tests.CheckoutTests')
+data.setCell(0, 3, 11741);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'addProductToCart')
-data.setCell(1, 2, 'tests.ProductTests')
-data.setCell(1, 3, 354);
+data.setCell(1, 1, 'checkoutValidationTest')
+data.setCell(1, 2, 'tests.CheckoutTests')
+data.setCell(1, 3, 1898);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'verifyProductPage')
 data.setCell(2, 2, 'tests.ProductTests')
-data.setCell(2, 3, 305);
+data.setCell(2, 3, 1401);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'emptyUsernameTest')
-data.setCell(3, 2, 'tests.LoginTests')
-data.setCell(3, 3, 294);
+data.setCell(3, 1, 'removeProductFromCart')
+data.setCell(3, 2, 'tests.ProductTests')
+data.setCell(3, 3, 1179);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'validLoginTest')
-data.setCell(4, 2, 'tests.LoginTests')
-data.setCell(4, 3, 282);
+data.setCell(4, 1, 'checkoutValidationTest')
+data.setCell(4, 2, 'tests.CheckoutTests')
+data.setCell(4, 3, 1168);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'invalidPasswordTest')
-data.setCell(5, 2, 'tests.LoginTests')
-data.setCell(5, 3, 229);
-window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
+data.setCell(5, 1, 'checkoutValidationTest')
+data.setCell(5, 2, 'tests.CheckoutTests')
+data.setCell(5, 3, 956);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'checkoutValidationTest')
+data.setCell(6, 2, 'tests.CheckoutTests')
+data.setCell(6, 3, 954);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'removeProductFromCart')
+data.setCell(7, 2, 'tests.CartTests')
+data.setCell(7, 3, 937);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'addMultipleProductsToCart')
+data.setCell(8, 2, 'tests.CartTests')
+data.setCell(8, 3, 919);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'checkoutValidationTest')
+data.setCell(9, 2, 'tests.CheckoutTests')
+data.setCell(9, 3, 805);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'verifyAddedProductInCart')
+data.setCell(10, 2, 'tests.CartTests')
+data.setCell(10, 3, 763);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'addProductToCart')
+data.setCell(11, 2, 'tests.ProductTests')
+data.setCell(11, 3, 627);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'removeProductFromCart')
+data.setCell(12, 2, 'tests.ProductTests')
+data.setCell(12, 3, 618);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'removeProductFromCart')
+data.setCell(13, 2, 'tests.CartTests')
+data.setCell(13, 3, 604);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'verifyAddedProductInCart')
+data.setCell(14, 2, 'tests.CartTests')
+data.setCell(14, 3, 586);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'addMultipleProductsToCart')
+data.setCell(15, 2, 'tests.CartTests')
+data.setCell(15, 3, 497);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'verifyProductPage')
+data.setCell(16, 2, 'tests.ProductTests')
+data.setCell(16, 3, 380);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'validLoginTest')
+data.setCell(17, 2, 'tests.LoginTests')
+data.setCell(17, 3, 368);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'addProductToCart')
+data.setCell(18, 2, 'tests.ProductTests')
+data.setCell(18, 3, 366);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'invalidPasswordTest')
+data.setCell(19, 2, 'tests.LoginTests')
+data.setCell(19, 3, 233);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'emptyUsernameTest')
+data.setCell(20, 2, 'tests.LoginTests')
+data.setCell(20, 3, 232);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'emptyUsernameTest')
+data.setCell(21, 2, 'tests.LoginTests')
+data.setCell(21, 3, 217);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'invalidPasswordTest')
+data.setCell(22, 2, 'tests.LoginTests')
+data.setCell(22, 3, 201);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'validLoginTest')
+data.setCell(23, 2, 'tests.LoginTests')
+data.setCell(23, 3, 170);
+window.suiteTableData['SauceDemo_Suite']= { tableData: data, tableDiv: 'times-div-SauceDemo_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
-              <div id="times-div-Suite">
-              </div> <!-- times-div-Suite -->
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <div id="times-div-SauceDemo_Suite">
+              </div> <!-- times-div-SauceDemo_Suite -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Suite" class="panel">
+        <div panel-name="reporter-SauceDemo_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Suite</span>
+            <span class="header-content">Reporter output for SauceDemo Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Suite" class="panel">
+        <div panel-name="ignored-methods-SauceDemo_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Suite" class="panel">
+        <div panel-name="chronological-SauceDemo_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
@@ -315,76 +678,330 @@ return data;
                 <span class="method-name">setUp(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">emptyUsernameTest</span>
-                <span class="method-start">3161 ms</span>
+                <span class="method-start">43127 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">3457 ms</span>
+                <span class="method-start">43349 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome)</span>
-                <span class="method-start">3628 ms</span>
+                <span class="method-start">43521 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">emptyUsernameTest</span>
+                <span class="method-start">44100 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">44334 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">45840 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">invalidPasswordTest</span>
-                <span class="method-start">4558 ms</span>
+                <span class="method-start">53994 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">4788 ms</span>
+                <span class="method-start">54228 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome)</span>
-                <span class="method-start">4952 ms</span>
+                <span class="method-start">54377 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">validLoginTest</span>
-                <span class="method-start">5889 ms</span>
+                <span class="method-name">invalidPasswordTest</span>
+                <span class="method-start">63054 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">6171 ms</span>
+                <span class="method-start">63256 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">64474 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validLoginTest</span>
+                <span class="method-start">68080 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">68450 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validLoginTest</span>
+                <span class="method-start">69378 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">69548 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.ProductTests</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome)</span>
-                <span class="method-start">6330 ms</span>
+                <span class="method-start">70199 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">70357 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">addProductToCart</span>
-                <span class="method-start">7345 ms</span>
+                <span class="method-start">72503 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">7699 ms</span>
+                <span class="method-start">73131 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome)</span>
-                <span class="method-start">7853 ms</span>
+                <span class="method-start">73337 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">removeProductFromCart</span>
-                <span class="method-start">8845 ms</span>
+                <span class="method-start">74934 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">9295 ms</span>
+                <span class="method-start">76116 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome)</span>
-                <span class="method-start">9446 ms</span>
+                <span class="method-start">76300 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <span class="method-name">addProductToCart</span>
+                <span class="method-start">77548 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">verifyProductPage</span>
-                <span class="method-start">10450 ms</span>
+                <span class="method-start">77595 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">10755 ms</span>
+                <span class="method-start">77915 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">78991 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">78996 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CartTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome)</span>
+                <span class="method-start">79159 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">addMultipleProductsToCart</span>
+                <span class="method-start">80974 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">81893 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome)</span>
+                <span class="method-start">82111 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">removeProductFromCart</span>
+                <span class="method-start">84390 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">85329 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome)</span>
+                <span class="method-start">85519 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.ProductTests</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">removeProductFromCart</span>
+                <span class="method-start">85595 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">86214 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">87338 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CartTests</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyAddedProductInCart</span>
+                <span class="method-start">87682 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">88269 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CheckoutTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome)</span>
+                <span class="method-start">88486 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">checkoutValidationTest(, Test, 395001, Error: First Name is required)</span>
+                <span class="method-start">90438 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">92341 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome)</span>
+                <span class="method-start">92562 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.ProductTests</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyProductPage</span>
+                <span class="method-start">93636 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">94018 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CheckoutTests</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkoutValidationTest(Ravi, , 395001, Error: Last Name is required)</span>
+                <span class="method-start">94680 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CartTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">95605 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">addMultipleProductsToCart</span>
+                <span class="method-start">102919 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">103416 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">104221 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CheckoutTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">106428 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome)</span>
+                <span class="method-start">106614 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">checkoutValidationTest(Ravi, Test, , Error: Postal Code is required)</span>
+                <span class="method-start">111134 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CartTests</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">removeProductFromCart</span>
+                <span class="method-start">111747 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CheckoutTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">112092 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CartTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">112353 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">113624 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyAddedProductInCart</span>
+                <span class="method-start">119251 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">120015 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CheckoutTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">120953 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">checkoutValidationTest(, Test, 395001, Error: First Name is required)</span>
+                <span class="method-start">124779 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">125948 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">126973 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">checkoutValidationTest(Ravi, , 395001, Error: Last Name is required)</span>
+                <span class="method-start">130676 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">131482 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">132301 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">checkoutValidationTest(Ravi, Test, , Error: Postal Code is required)</span>
+                <span class="method-start">135966 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">136921 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
