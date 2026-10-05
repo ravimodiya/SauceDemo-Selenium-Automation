@@ -1,10 +1,12 @@
-
 package factory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+
+import java.util.Map;
 
 public class DriverFactory {
 
@@ -18,7 +20,27 @@ public class DriverFactory {
         switch (browser.toLowerCase()) {
 
             case "chrome":
-                webDriver = new ChromeDriver();
+
+                ChromeOptions options =
+                        new ChromeOptions();
+
+                options.addArguments(
+                        "--disable-notifications"
+                );
+
+                options.setExperimentalOption(
+                        "prefs",
+                        Map.of(
+                                "credentials_enable_service",
+                                false,
+                                "profile.password_manager_leak_detection",
+                                false
+                        )
+                );
+
+                webDriver =
+                        new ChromeDriver(options);
+
                 break;
 
             case "firefox":
@@ -43,6 +65,7 @@ public class DriverFactory {
     }
 
     public static void quitDriver() {
+
         if (driver.get() != null) {
             driver.get().quit();
             driver.remove();
