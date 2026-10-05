@@ -38,7 +38,7 @@ public class CheckoutTests extends BaseTest {
 
         Assert.assertEquals(
                 checkoutPage.getErrorMessage(),
-                expectedError
+                999
         );
     }
 }
