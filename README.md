@@ -1,22 +1,24 @@
-# SauceDemo Selenium Automation Framework
+# SauceDemo Selenium Automation
 
-A Java-based UI automation framework built with **Selenium WebDriver, TestNG, Maven, and ExtentReports** for testing the SauceDemo web application.
+A Java-based Selenium automation framework for testing the [SauceDemo](https://www.saucedemo.com/) web application using Selenium WebDriver, TestNG, Maven, and Jenkins.
 
-The framework is structured using the **Page Object Model (POM)** and supports **parallel cross-browser execution**.
+The framework follows the **Page Object Model (POM)** and supports cross-browser and parallel test execution.
 
-## Tech Stack
+## 🛠 Tech Stack
 
 * **Java**
 * **Selenium WebDriver**
 * **TestNG**
 * **Maven**
+* **Jenkins**
 * **ExtentReports**
-* **Git / GitHub**
+* **Git & GitHub**
+* **Page Object Model (POM)**
 
-## Framework Structure
+## 📁 Project Structure
 
 ```text
-SauceDemoAutomation/
+sauce-demo-automation/
 │
 ├── src/
 │   ├── main/
@@ -31,8 +33,8 @@ SauceDemoAutomation/
 │   │   │   │   └── CheckoutPage.java
 │   │   │   │
 │   │   │   └── utils/
-│   │   │       ├── WaitUtils.java
-│   │   │       └── ConfigReader.java
+│   │   │       ├── ConfigReader.java
+│   │   │       └── WaitUtils.java
 │   │   │
 │   │   └── resources/
 │   │       └── config.properties
@@ -52,14 +54,13 @@ SauceDemoAutomation/
 │               ├── CartTests.java
 │               └── CheckoutTests.java
 │
-├── testng.xml
+├── test-output/
 ├── pom.xml
+├── testng.xml
 └── README.md
 ```
 
-## Test Coverage
-
-The framework currently covers the following areas:
+## 🧪 Test Coverage
 
 ### Login
 
@@ -69,8 +70,9 @@ The framework currently covers the following areas:
 
 ### Products
 
-* Product page verification
-* Product count verification
+* Verify products page
+* Verify product count
+* Verify page title
 * Add product to cart
 * Remove product from cart
 * Product sorting
@@ -78,8 +80,8 @@ The framework currently covers the following areas:
 ### Cart
 
 * Verify added product
-* Remove product
-* Add multiple products
+* Remove product from cart
+* Add and verify multiple products
 
 ### Checkout
 
@@ -88,32 +90,38 @@ The framework currently covers the following areas:
 * Last name validation
 * Postal code validation
 
-Checkout validation scenarios are implemented using a **TestNG DataProvider**.
+Checkout validation scenarios use **TestNG DataProvider** for data-driven testing.
 
-## Framework Features
+## 🏗 Framework Features
 
 ### Page Object Model
 
-Page-specific locators and actions are separated from test logic.
+Page-specific locators and actions are separated from test classes.
+
+For example:
 
 ```text
-Test → Page Object → Selenium WebDriver
+LoginTests
+     ↓
+LoginPage
+     ↓
+SauceDemo Login UI
 ```
 
-This keeps the test classes focused on test scenarios while page classes handle UI interactions.
+This makes the framework easier to maintain when application elements change.
 
 ### Explicit Waits
 
-Reusable explicit wait methods are centralized in `WaitUtils`.
+Reusable explicit wait methods are implemented through `WaitUtils`.
 
-Examples include:
+The framework uses waits for conditions such as:
 
 * Element visibility
 * Element clickability
 * Element invisibility
-* URL conditions
+* URL changes
 
-### Cross-Browser Execution
+### Cross-Browser Testing
 
 The framework supports:
 
@@ -121,115 +129,131 @@ The framework supports:
 * Firefox
 * Edge
 
-Browser selection is handled through TestNG parameters and `DriverFactory`.
+The browser is supplied through the TestNG XML configuration.
 
 ### Parallel Execution
 
 Chrome and Firefox test suites can run in parallel using TestNG.
 
-The WebDriver instance is managed using `ThreadLocal<WebDriver>` so each execution thread gets its own driver instance.
+```xml
+<suite parallel="tests" thread-count="2">
+```
+
+`ThreadLocal<WebDriver>` is used in `DriverFactory` to maintain separate WebDriver instances during parallel execution.
 
 ### Data-Driven Testing
 
-TestNG `@DataProvider` is used for checkout validation scenarios where the same test flow is executed with different input combinations.
+TestNG `@DataProvider` is used for checkout validation scenarios.
+
+This allows multiple input combinations to be executed using the same test method.
 
 ### Reporting
 
-ExtentReports generates an HTML execution report containing test results and execution status.
+The framework uses **ExtentReports** to generate an HTML test report.
 
-Report location:
+For failed tests, a Selenium screenshot is captured and embedded directly into the report.
+
+### Configuration
+
+Application configuration is maintained separately in:
 
 ```text
-test-output/ExtentReport.html
+src/main/resources/config.properties
 ```
 
-## Running the Tests
+Example:
 
-### Prerequisites
-
-Make sure the following are installed:
-
-* Java
-* Maven
-* Git
-
-Verify the installations:
-
-```bash
-java -version
-mvn -version
-git --version
+```properties
+url=https://www.saucedemo.com/
 ```
 
-### Run the TestNG Suite
+## 🚀 Running Tests Locally
 
-From the project root:
+### Run the complete TestNG suite
 
 ```bash
 mvn clean test
 ```
 
-The Maven Surefire configuration executes the `testng.xml` suite.
+The Maven Surefire plugin executes the configured `testng.xml` suite.
 
-## Browser Configuration
+### Run with a specific browser
 
-Browser execution is configured in `testng.xml`.
+Browser selection is controlled through TestNG parameters.
 
 Example:
 
 ```xml
-<test name="Chrome Tests">
-    <parameter name="browser" value="chrome"/>
-</test>
-
-<test name="Firefox Tests">
-    <parameter name="browser" value="firefox"/>
-</test>
+<parameter name="browser" value="chrome"/>
 ```
 
-Additional browser configurations can be added through `DriverFactory`.
-
-## Reporting
-
-After execution, open:
+Supported values:
 
 ```text
-test-output/ExtentReport.html
+chrome
+firefox
+edge
 ```
 
-The report provides an overview of the executed tests and their status.
+## 🔄 Jenkins CI
 
-## Application Under Test
+The project is integrated with Jenkins for continuous integration.
 
-The framework is built against:
-
-**SauceDemo**
+The current workflow is:
 
 ```text
-https://www.saucedemo.com/
+Git push
+    ↓
+GitHub (master)
+    ↓
+Jenkins SCM Polling
+    ↓
+Maven
+    ↓
+TestNG
+    ↓
+Selenium WebDriver
+    ↓
+ExtentReports
+    ↓
+Jenkins archived report
 ```
 
-## Purpose
+Jenkins automatically checks the GitHub repository for changes and runs:
 
-This project was built to practice and demonstrate practical UI automation concepts including:
+```bash
+mvn clean test
+```
 
-* Selenium WebDriver
-* TestNG test design
-* Page Object Model
-* Explicit waits
-* Data-driven testing
+A failed test causes the Jenkins build to be marked as **FAILURE**, while a successful test run results in a **SUCCESS** build.
+
+## 📊 Test Execution
+
+The framework is designed to demonstrate:
+
+* Functional UI automation
+* Regression testing
 * Cross-browser testing
 * Parallel execution
-* Maven test execution
-* HTML test reporting
+* Data-driven testing
+* Explicit synchronization
+* Test reporting
+* Failure screenshots
+* CI execution through Jenkins
 
-## Future Improvements
+## 🎯 Project Purpose
 
-Potential additions to the framework include:
+This project was built to practice and demonstrate practical Selenium automation framework development using Java and TestNG.
 
-* Automatic failure screenshots
-* Screenshot attachment to ExtentReports
-* CI execution with GitHub Actions
-* Environment-specific configuration
-* More reusable test utilities
-* Additional negative and edge-case scenarios
+The focus is on creating a maintainable test structure rather than simply writing individual Selenium scripts.
+
+## 🔮 Future Improvements
+
+Possible future improvements include:
+
+* Additional checkout and product validations
+* More negative test scenarios
+* API testing integration
+* Improved test data management
+* Additional CI/CD improvements
+* Enhanced reporting and test execution dashboards
