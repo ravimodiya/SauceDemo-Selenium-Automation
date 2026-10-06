@@ -39,6 +39,7 @@ public class CheckoutTests extends BaseTest {
         Assert.assertEquals(
                 checkoutPage.getErrorMessage(),
                 expectedError
+                // CI trigger test
         );
     }
 }
