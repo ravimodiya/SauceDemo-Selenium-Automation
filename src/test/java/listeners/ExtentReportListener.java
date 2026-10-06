@@ -1,32 +1,23 @@
-        package listeners;
+package listeners;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-
-import factory.DriverFactory;
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import factory.DriverFactory;
 
 public class ExtentReportListener implements ITestListener {
 
     private static ExtentReports extent;
-    private static ThreadLocal<ExtentTest> test =
-            new ThreadLocal<>();
+    private static final ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
     @Override
     public void onStart(org.testng.ITestContext context) {
-
-        ExtentSparkReporter sparkReporter =
-                new ExtentSparkReporter(
-                        "test-output/ExtentReport.html"
-                );
-
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("test-output/ExtentReport.html");
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
 
@@ -37,62 +28,38 @@ public class ExtentReportListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-
-        ExtentTest extentTest =
-                extent.createTest(
-                        result.getMethod().getMethodName()
-                );
-
+        ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
         test.set(extentTest);
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-
         test.get().pass("Test passed");
     }
 
     @Override
-
     public void onTestFailure(ITestResult result) {
-
         test.get().fail("Test failed");
         test.get().fail(result.getThrowable());
 
         try {
-            TakesScreenshot screenshot =
-                    (TakesScreenshot) DriverFactory.getDriver();
-
-            String base64Screenshot =
-                    screenshot.getScreenshotAs(OutputType.BASE64);
-
-            test.get().addScreenCaptureFromBase64String(
-                    base64Screenshot,
-                    "Failure Screenshot"
-            );
-
+            TakesScreenshot screenshot = (TakesScreenshot) DriverFactory.getDriver();
+            String base64Screenshot = screenshot.getScreenshotAs(OutputType.BASE64);
+            test.get().addScreenCaptureFromBase64String(base64Screenshot, "Failure Screenshot");
         } catch (Exception e) {
-
-            test.get().warning(
-                    "Unable to capture screenshot: "
-                            + e.getMessage()
-            );
+            test.get().warning("Unable to capture screenshot: " + e.getMessage());
         }
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-
         test.get().skip("Test skipped");
     }
 
     @Override
     public void onFinish(org.testng.ITestContext context) {
-
         extent.flush();
         test.remove();
     }
-
-
 }
 

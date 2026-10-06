@@ -1,4 +1,3 @@
-
 package utils;
 
 import java.time.Duration;
@@ -14,33 +13,22 @@ public class WaitUtils {
     private final WebDriverWait wait;
 
     public WaitUtils(WebDriver driver) {
-        this.wait = new WebDriverWait(
-                driver,
-                Duration.ofSeconds(10)
-        );
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public WebElement waitForVisibility(By locator) {
-        return wait.until(
-                ExpectedConditions.visibilityOfElementLocated(locator)
-        );
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public WebElement waitForClickable(By locator) {
-        return wait.until(
-                ExpectedConditions.elementToBeClickable(locator)
-        );
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public boolean waitForInvisibility(By locator) {
-        return wait.until(
-                ExpectedConditions.invisibilityOfElementLocated(locator)
-        );
+        return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
     public boolean waitForUrlContains(String value) {
-        return wait.until(
-                ExpectedConditions.urlContains(value)
-        );
+        return wait.until(ExpectedConditions.urlContains(value));
     }
 }

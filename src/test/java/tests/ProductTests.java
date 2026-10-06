@@ -23,7 +23,6 @@ public class ProductTests extends BaseTest {
         ProductsPage productsPage = loginPage.login("standard_user", "secret_sauce");
 
         productsPage.addProductToCart("Sauce Labs Backpack");
-
         Assert.assertEquals(productsPage.getCartItemCount(), 1);
     }
 
@@ -36,7 +35,6 @@ public class ProductTests extends BaseTest {
         Assert.assertEquals(productsPage.getCartItemCount(), 1);
 
         productsPage.removeProductFromCart("Sauce Labs Backpack");
-
         Assert.assertEquals(productsPage.getCartItemCount(), 0);
     }
 }

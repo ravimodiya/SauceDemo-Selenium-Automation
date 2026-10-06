@@ -1,4 +1,3 @@
-
 package pages;
 
 import java.util.ArrayList;
@@ -18,12 +17,9 @@ public class ProductsPage {
 
     private final By pageTitle = By.className("title");
     private final By inventoryItems = By.className("inventory_item");
-    private final By sortDropdown =
-            By.className("product_sort_container");
-    private final By cartIcon =
-            By.className("shopping_cart_link");
-    private final By cartBadge =
-            By.className("shopping_cart_badge");
+    private final By sortDropdown = By.className("product_sort_container");
+    private final By cartIcon = By.className("shopping_cart_link");
+    private final By cartBadge = By.className("shopping_cart_badge");
 
     public ProductsPage(WebDriver driver) {
         this.driver = driver;

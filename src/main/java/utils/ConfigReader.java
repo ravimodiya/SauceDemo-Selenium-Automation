@@ -9,20 +9,10 @@ public class ConfigReader {
     private static final Properties properties = new Properties();
 
     static {
-        try {
-            FileInputStream file =
-                    new FileInputStream(
-                            "src/main/resources/config.properties"
-                    );
-
+        try (FileInputStream file = new FileInputStream("src/main/resources/config.properties")) {
             properties.load(file);
-            file.close();
-
         } catch (IOException e) {
-            throw new RuntimeException(
-                    "Unable to load config.properties",
-                    e
-            );
+            throw new RuntimeException("Unable to load config.properties", e);
         }
     }
 

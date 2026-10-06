@@ -1,4 +1,3 @@
-
 package pages;
 
 import org.openqa.selenium.By;
@@ -19,17 +18,14 @@ public class CheckoutPage {
     private final By cancelButton = By.id("cancel");
     private final By finishButton = By.id("finish");
 
-    private final By errorMessage =
-            By.cssSelector("[data-test='error']");
+    private final By errorMessage = By.cssSelector("[data-test='error']");
 
     private final By summaryItems = By.className("cart_item");
-    private final By itemTotal =
-            By.className("summary_subtotal_label");
+    private final By itemTotal = By.className("summary_subtotal_label");
     private final By tax = By.className("summary_tax_label");
     private final By total = By.className("summary_total_label");
 
-    private final By confirmationMessage =
-            By.className("complete-header");
+    private final By confirmationMessage = By.className("complete-header");
 
     public CheckoutPage(WebDriver driver) {
         this.driver = driver;

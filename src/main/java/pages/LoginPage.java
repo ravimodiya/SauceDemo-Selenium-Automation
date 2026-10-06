@@ -1,4 +1,3 @@
-
 package pages;
 
 import org.openqa.selenium.By;
@@ -8,13 +7,13 @@ import utils.WaitUtils;
 
 public class LoginPage {
 
-    WebDriver driver;
-    WaitUtils waitUtils;
+    private final WebDriver driver;
+    private final WaitUtils waitUtils;
 
-    By usernameField = By.id("user-name");
-    By passwordField = By.id("password");
-    By loginButton = By.id("login-button");
-    By errorMessage =By.cssSelector("[data-test='error']");
+    private final By usernameField = By.id("user-name");
+    private final By passwordField = By.id("password");
+    private final By loginButton = By.id("login-button");
+    private final By errorMessage = By.cssSelector("[data-test='error']");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;

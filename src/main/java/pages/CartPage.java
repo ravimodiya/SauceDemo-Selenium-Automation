@@ -1,4 +1,3 @@
-
 package pages;
 
 import java.util.ArrayList;
@@ -17,8 +16,7 @@ public class CartPage {
 
     private final By cartItems = By.className("cart_item");
     private final By checkoutButton = By.id("checkout");
-    private final By continueShoppingButton =
-            By.id("continue-shopping");
+    private final By continueShoppingButton = By.id("continue-shopping");
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
@@ -26,8 +24,7 @@ public class CartPage {
     }
 
     public List<String> getCartProductNames() {
-        List<WebElement> items =
-                driver.findElements(cartItems);
+        List<WebElement> items = driver.findElements(cartItems);
 
         List<String> productNames = new ArrayList<>();
 

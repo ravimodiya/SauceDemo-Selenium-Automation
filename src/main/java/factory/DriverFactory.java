@@ -10,37 +10,19 @@ import java.util.Map;
 
 public class DriverFactory {
 
-    private static final ThreadLocal<WebDriver> driver =
-            new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static void initializeDriver(String browser) {
-
         WebDriver webDriver;
 
         switch (browser.toLowerCase()) {
-
             case "chrome":
-
-                ChromeOptions options =
-                        new ChromeOptions();
-
-                options.addArguments(
-                        "--disable-notifications"
-                );
-
-                options.setExperimentalOption(
-                        "prefs",
-                        Map.of(
-                                "credentials_enable_service",
-                                false,
-                                "profile.password_manager_leak_detection",
-                                false
-                        )
-                );
-
-                webDriver =
-                        new ChromeDriver(options);
-
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--disable-notifications");
+                options.setExperimentalOption("prefs",
+                        Map.of("credentials_enable_service", false,
+                                "profile.password_manager_leak_detection", false));
+                webDriver = new ChromeDriver(options);
                 break;
 
             case "firefox":
@@ -52,9 +34,7 @@ public class DriverFactory {
                 break;
 
             default:
-                throw new IllegalArgumentException(
-                        "Invalid browser: " + browser
-                );
+                throw new IllegalArgumentException("Invalid browser: " + browser);
         }
 
         driver.set(webDriver);
@@ -65,7 +45,6 @@ public class DriverFactory {
     }
 
     public static void quitDriver() {
-
         if (driver.get() != null) {
             driver.get().quit();
             driver.remove();
