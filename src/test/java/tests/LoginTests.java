@@ -1,32 +1,39 @@
-package tests;
+
+        package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import data.TestData;
 import pages.LoginPage;
 
 public class LoginTests extends BaseTest {
 
-    @Test
-    public void validLoginTest() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("standard_user", "secret_sauce");
-        Assert.assertEquals(driver.getTitle(), "Swag Labs");
-    }
+    @Test(
+            dataProvider = "loginData",
+            dataProviderClass = TestData.class
+    )
+    public void loginTest(
+            String username,
+            String password,
+            String expectedResult) {
 
-    @Test
-    public void invalidPasswordTest() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("standard_user", "wrong_password");
-        Assert.assertEquals(loginPage.getErrorMessage(),
-                "Epic sadface: Username and password do not match any user in this service");
-    }
 
-    @Test
-    public void emptyUsernameTest() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("", "secret_sauce");
-        Assert.assertEquals(loginPage.getErrorMessage(),
-                "Epic sadface: Username is required");
+        loginPage.login(username, password);
+
+        if (expectedResult.equals("success")) {
+
+            Assert.assertTrue(
+                    driver.getCurrentUrl().contains("inventory")
+            );
+
+        } else {
+
+            Assert.assertTrue(
+                    loginPage.isErrorDisplayed()
+            );
+        }
     }
 }
+

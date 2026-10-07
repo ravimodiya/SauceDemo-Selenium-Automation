@@ -62,6 +62,8 @@ public class ProductsPage {
         WebElement product = getProductContainer(productName);
 
         product.findElement(By.cssSelector("button")).click();
+
+        waitUtils.waitForVisibility(cartBadge);
     }
 
     public void removeProductFromCart(String productName) {
@@ -88,10 +90,14 @@ public class ProductsPage {
     }
 
     private WebElement getProductContainer(String productName) {
+
+        waitUtils.waitForVisibility(inventoryItems);
+
         List<WebElement> products =
                 driver.findElements(inventoryItems);
 
         for (WebElement product : products) {
+
             String name = product.findElement(
                     By.className("inventory_item_name")
             ).getText();
