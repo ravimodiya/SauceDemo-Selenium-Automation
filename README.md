@@ -1,6 +1,4 @@
-Yes. Since you now have **JSON + Excel data-driven testing** and the checkout validation is working, I'd update the README to reflect the current framework accurately.
 
-Replace your current `README.md` with this:
 
 ````markdown
 # SauceDemo Selenium Automation
