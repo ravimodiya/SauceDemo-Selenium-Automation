@@ -1,21 +1,41 @@
+Yes. Since you now have **JSON + Excel data-driven testing** and the checkout validation is working, I'd update the README to reflect the current framework accurately.
+
+Replace your current `README.md` with this:
+
+````markdown
 # SauceDemo Selenium Automation
 
-A Java-based Selenium automation framework for testing the [SauceDemo](https://www.saucedemo.com/) web application using Selenium WebDriver, TestNG, Maven, and Jenkins.
+A Selenium WebDriver automation framework built using Java, TestNG, Maven, and Page Object Model (POM) for testing the SauceDemo web application.
 
-The framework follows the **Page Object Model (POM)** and supports cross-browser and parallel test execution.
+## Tech Stack
 
-## 🛠 Tech Stack
+- Java
+- Selenium WebDriver
+- TestNG
+- Maven
+- Page Object Model (POM)
+- ExtentReports
+- Jackson JSON
+- Apache POI
+- Jenkins
 
-* **Java**
-* **Selenium WebDriver**
-* **TestNG**
-* **Maven**
-* **Jenkins**
-* **ExtentReports**
-* **Git & GitHub**
-* **Page Object Model (POM)**
+## Framework Features
 
-## 📁 Project Structure
+- Page Object Model design
+- Functional and validation test automation
+- Explicit waits using WebDriverWait
+- ThreadLocal WebDriver for parallel execution
+- Cross-browser testing with Chrome, Firefox, and Edge
+- TestNG parameters
+- TestNG DataProvider
+- JSON-based test data
+- Excel-based test data
+- Automatic failure screenshots
+- ExtentReports test reporting
+- Maven test execution
+- Jenkins CI integration
+
+## Project Structure
 
 ```text
 sauce-demo-automation/
@@ -33,153 +53,116 @@ sauce-demo-automation/
 │   │   │   │   └── CheckoutPage.java
 │   │   │   │
 │   │   │   └── utils/
+│   │   │       ├── WaitUtils.java
 │   │   │       ├── ConfigReader.java
-│   │   │       └── WaitUtils.java
+│   │   │       ├── JsonDataReader.java
+│   │   │       └── ExcelDataReader.java
 │   │   │
 │   │   └── resources/
 │   │       └── config.properties
 │   │
 │   └── test/
-│       └── java/
-│           ├── data/
-│           │   └── TestData.java
-│           │
-│           ├── listeners/
-│           │   └── ExtentReportListener.java
-│           │
-│           └── tests/
-│               ├── BaseTest.java
-│               ├── LoginTests.java
-│               ├── ProductTests.java
-│               ├── CartTests.java
-│               └── CheckoutTests.java
+│       ├── java/
+│       │   ├── data/
+│       │   │   └── TestData.java
+│       │   │
+│       │   ├── listeners/
+│       │   │   └── ExtentReportListener.java
+│       │   │
+│       │   └── tests/
+│       │       ├── BaseTest.java
+│       │       ├── LoginTests.java
+│       │       ├── ProductTests.java
+│       │       ├── CartTests.java
+│       │       └── CheckoutTests.java
+│       │
+│       └── resources/
+│           └── testdata/
+│               ├── loginData.json
+│               └── checkoutData.xlsx
 │
-├── test-output/
-├── pom.xml
 ├── testng.xml
+├── checkouttest.xml
+├── pom.xml
 └── README.md
-```
+````
 
-## 🧪 Test Coverage
+## Test Coverage
 
 ### Login
 
 * Valid login
 * Invalid password
 * Empty username validation
+* Data-driven login testing using JSON
 
 ### Products
 
 * Verify products page
 * Verify product count
-* Verify page title
-* Add product to cart
-* Remove product from cart
+* Verify product names
 * Product sorting
+* Add products to cart
+* Remove products from cart
 
 ### Cart
 
 * Verify added product
+* Verify multiple products
 * Remove product from cart
-* Add and verify multiple products
+* Verify cart item count
 
 ### Checkout
 
-* Complete checkout flow
-* First name validation
-* Last name validation
-* Postal code validation
+* Checkout validation
+* First name required validation
+* Last name required validation
+* Postal code required validation
+* Data-driven checkout testing using Excel
 
-Checkout validation scenarios use **TestNG DataProvider** for data-driven testing.
+## Test Data
 
-## 🏗 Framework Features
+### JSON
 
-### Page Object Model
-
-Page-specific locators and actions are separated from test classes.
-
-For example:
+Login test data is maintained in:
 
 ```text
-LoginTests
-     ↓
-LoginPage
-     ↓
-SauceDemo Login UI
+src/test/resources/testdata/loginData.json
 ```
 
-This makes the framework easier to maintain when application elements change.
+### Excel
 
-### Explicit Waits
-
-Reusable explicit wait methods are implemented through `WaitUtils`.
-
-The framework uses waits for conditions such as:
-
-* Element visibility
-* Element clickability
-* Element invisibility
-* URL changes
-
-### Cross-Browser Testing
-
-The framework supports:
-
-* Chrome
-* Firefox
-* Edge
-
-The browser is supplied through the TestNG XML configuration.
-
-### Parallel Execution
-
-Chrome and Firefox test suites can run in parallel using TestNG.
-
-```xml
-<suite parallel="tests" thread-count="2">
-```
-
-`ThreadLocal<WebDriver>` is used in `DriverFactory` to maintain separate WebDriver instances during parallel execution.
-
-### Data-Driven Testing
-
-TestNG `@DataProvider` is used for checkout validation scenarios.
-
-This allows multiple input combinations to be executed using the same test method.
-
-### Reporting
-
-The framework uses **ExtentReports** to generate an HTML test report.
-
-For failed tests, a Selenium screenshot is captured and embedded directly into the report.
-
-### Configuration
-
-Application configuration is maintained separately in:
+Checkout validation data is maintained in:
 
 ```text
-src/main/resources/config.properties
+src/test/resources/testdata/checkoutData.xlsx
 ```
 
 Example:
 
-```properties
-url=https://www.saucedemo.com/
-```
+| firstName | lastName | postalCode | expectedError                  |
+| --------- | -------- | ---------- | ------------------------------ |
+|           | Test     | 395001     | Error: First Name is required  |
+| Ravi      |          | 395001     | Error: Last Name is required   |
+| Ravi      | Test     |            | Error: Postal Code is required |
 
-## 🚀 Running Tests Locally
+## Running Tests
 
-### Run the complete TestNG suite
+### Run the complete test suite
 
 ```bash
-mvn clean test
+mvn clean test "-DsuiteXmlFile=testng.xml"
 ```
 
-The Maven Surefire plugin executes the configured `testng.xml` suite.
+### Run checkout tests only
 
-### Run with a specific browser
+```bash
+mvn clean test "-DsuiteXmlFile=checkouttest.xml"
+```
 
-Browser selection is controlled through TestNG parameters.
+## Browser Configuration
+
+Browsers are configured through TestNG parameters.
 
 Example:
 
@@ -187,73 +170,93 @@ Example:
 <parameter name="browser" value="chrome"/>
 ```
 
-Supported values:
+Supported browsers:
 
-```text
-chrome
-firefox
-edge
+* Chrome
+* Firefox
+* Edge
+
+## Parallel Execution
+
+The main TestNG suite supports parallel browser execution.
+
+Example:
+
+```xml
+<suite name="SauceDemo Suite"
+       parallel="tests"
+       thread-count="2">
 ```
 
-## 🔄 Jenkins CI
+ThreadLocal WebDriver is used to maintain separate WebDriver instances for parallel tests.
 
-The project is integrated with Jenkins for continuous integration.
+## Reporting
 
-The current workflow is:
+ExtentReports is used to generate test execution reports.
+
+The framework also captures screenshots automatically when a test fails.
+
+## Jenkins Integration
+
+The project can be executed through Jenkins using the GitHub repository.
+
+Basic CI flow:
 
 ```text
-Git push
-    ↓
-GitHub (master)
-    ↓
-Jenkins SCM Polling
-    ↓
+GitHub
+   ↓
+Jenkins
+   ↓
 Maven
-    ↓
+   ↓
 TestNG
-    ↓
+   ↓
 Selenium WebDriver
-    ↓
+   ↓
+Test Execution
+   ↓
 ExtentReports
-    ↓
-Jenkins archived report
 ```
 
-Jenkins automatically checks the GitHub repository for changes and runs:
+Jenkins can execute:
 
 ```bash
-mvn clean test
+mvn clean test "-DsuiteXmlFile=testng.xml"
 ```
 
-A failed test causes the Jenkins build to be marked as **FAILURE**, while a successful test run results in a **SUCCESS** build.
+and archive the generated test reports.
 
-## 📊 Test Execution
+## Design Approach
 
-The framework is designed to demonstrate:
+The framework follows the Page Object Model to separate:
 
-* Functional UI automation
-* Regression testing
-* Cross-browser testing
-* Parallel execution
-* Data-driven testing
-* Explicit synchronization
-* Test reporting
-* Failure screenshots
-* CI execution through Jenkins
+* Test logic
+* Page interactions
+* Driver management
+* Test data
+* Utility functions
+* Reporting
 
-## 🎯 Project Purpose
+This makes the framework easier to maintain and extend as additional test cases are added.
 
-This project was built to practice and demonstrate practical Selenium automation framework development using Java and TestNG.
+## Future Improvements
 
-The focus is on creating a maintainable test structure rather than simply writing individual Selenium scripts.
+Potential future additions:
 
-## 🔮 Future Improvements
+* API automation using REST Assured
+* Database validation
+* Headless browser execution
+* Additional test coverage
+* Enhanced CI/CD pipeline configuration
 
-Possible future improvements include:
+````
 
-* Additional checkout and product validations
-* More negative test scenarios
-* API testing integration
-* Improved test data management
-* Additional CI/CD improvements
-* Enhanced reporting and test execution dashboards
+After replacing it:
+
+```powershell
+git add README.md
+git commit -m "Update README with framework features and test coverage"
+git push origin master
+````
+
+This README now reflects what you've **actually implemented**, without claiming API automation or other skills you haven't added yet.
