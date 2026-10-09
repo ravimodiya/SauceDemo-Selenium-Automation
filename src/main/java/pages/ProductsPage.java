@@ -41,11 +41,7 @@ public class ProductsPage {
         List<String> productNames = new ArrayList<>();
 
         for (WebElement product : products) {
-            String name = product.findElement(
-                    By.className("inventory_item_name")
-            ).getText();
-
-            productNames.add(name);
+            productNames.add(extractProductName(product));
         }
 
         return productNames;
@@ -90,25 +86,37 @@ public class ProductsPage {
     }
 
     private WebElement getProductContainer(String productName) {
-
         waitUtils.waitForVisibility(inventoryItems);
 
         List<WebElement> products =
                 driver.findElements(inventoryItems);
 
         for (WebElement product : products) {
-
-            String name = product.findElement(
-                    By.className("inventory_item_name")
-            ).getText();
-
-            if (name.equals(productName)) {
+            if (extractProductName(product).equals(productName)) {
                 return product;
             }
         }
 
         throw new IllegalArgumentException(
                 "Product not found: " + productName
+        );
+    }
+
+    private String extractProductName(WebElement product) {
+        return product.findElement(
+                By.className("inventory_item_name")
+        ).getText();
+    }
+
+    public double getProductPrice(String productName) {
+        WebElement product = getProductContainer(productName);
+
+        String priceText = product
+                .findElement(By.className("inventory_item_price"))
+                .getText();
+
+        return Double.parseDouble(
+                priceText.replace("$", "").trim()
         );
     }
 }

@@ -1,56 +1,43 @@
-
-        package utils;
-
-import org.apache.poi.ss.usermodel.*;
+package utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
 public class ExcelDataReader {
 
     public static Object[][] getCheckoutData() throws IOException {
+        String filePath = "src/test/resources/testdata/checkoutData.xlsx";
 
-        String filePath =
-                "src/test/resources/testdata/checkoutData.xlsx";
+        try (FileInputStream fileInputStream = new FileInputStream(filePath);
+             Workbook workbook = WorkbookFactory.create(fileInputStream)) {
 
-        FileInputStream fileInputStream =
-                new FileInputStream(filePath);
+            Sheet sheet = workbook.getSheet("Sheet1");
+            int rowCount = sheet.getLastRowNum();
+            int columnCount = sheet.getRow(0).getLastCellNum();
 
-        Workbook workbook =
-                WorkbookFactory.create(fileInputStream);
+            Object[][] data = new Object[rowCount][columnCount];
 
-        Sheet sheet =
-                workbook.getSheet("Sheet1");
+            for (int i = 1; i <= rowCount; i++) {
+                Row row = sheet.getRow(i);
 
-        int rowCount = sheet.getLastRowNum();
-        int columnCount = sheet.getRow(0).getLastCellNum();
-
-        Object[][] data =
-                new Object[rowCount][columnCount];
-
-        for (int i = 1; i <= rowCount; i++) {
-
-            Row row = sheet.getRow(i);
-
-            for (int j = 0; j < columnCount; j++) {
-
-                Cell cell = row.getCell(
-                        j,
-                        Row.MissingCellPolicy.CREATE_NULL_AS_BLANK
-                );
-
-                data[i - 1][j] = cellToString(cell);
+                for (int j = 0; j < columnCount; j++) {
+                    Cell cell = row.getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+                    data[i - 1][j] = cellToString(cell);
+                }
             }
+
+            return data;
         }
-
-        workbook.close();
-        fileInputStream.close();
-
-        return data;
     }
 
     private static String cellToString(Cell cell) {
-
         if (cell == null || cell.getCellType() == CellType.BLANK) {
             return "";
         }
@@ -62,4 +49,3 @@ public class ExcelDataReader {
         return cell.toString().trim();
     }
 }
-

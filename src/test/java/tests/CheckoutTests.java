@@ -1,57 +1,27 @@
-
-        package tests;
+package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import data.TestData;
 import pages.CartPage;
 import pages.CheckoutPage;
 import pages.LoginPage;
 import pages.ProductsPage;
-import data.TestData;
 
 public class CheckoutTests extends BaseTest {
 
-    @Test(
-            dataProvider = "checkoutValidationData",
-            dataProviderClass = TestData.class
-    )
-    public void checkoutValidationTest(
-            String firstName,
-            String lastName,
-            String postalCode,
-            String expectedError) {
-
+    @Test(dataProvider = "checkoutValidationData", dataProviderClass = TestData.class)
+    public void checkoutValidationTest(String firstName, String lastName, String postalCode, String expectedError) {
         LoginPage loginPage = new LoginPage(driver);
+        ProductsPage productsPage = loginPage.login("standard_user", "secret_sauce");
+        productsPage.addProductToCart("Sauce Labs Backpack");
 
-        ProductsPage productsPage =
-                loginPage.login(
-                        "standard_user",
-                        "secret_sauce"
-                );
-
-        productsPage.addProductToCart(
-                "Sauce Labs Backpack"
-        );
-
-        CartPage cartPage =
-                productsPage.openCart();
-
-        CheckoutPage checkoutPage =
-                cartPage.clickCheckout();
-
-        checkoutPage.enterCustomerInformation(
-                firstName,
-                lastName,
-                postalCode
-        );
-
+        CartPage cartPage = productsPage.openCart();
+        CheckoutPage checkoutPage = cartPage.clickCheckout();
+        checkoutPage.enterCustomerInformation(firstName, lastName, postalCode);
         checkoutPage.clickContinue();
 
-        Assert.assertEquals(
-                checkoutPage.getErrorMessage(),
-                expectedError
-        );
+        Assert.assertEquals(checkoutPage.getErrorMessage(), expectedError);
     }
 }
-

@@ -3,6 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import data.TestData;
 import pages.LoginPage;
 import pages.ProductsPage;
 
@@ -36,5 +37,14 @@ public class ProductTests extends BaseTest {
 
         productsPage.removeProductFromCart("Sauce Labs Backpack");
         Assert.assertEquals(productsPage.getCartItemCount(), 0);
+    }
+
+    @Test(dataProvider = "productData", dataProviderClass = TestData.class)
+    public void verifyProductPriceFromDatabase(String productName, double expectedPrice) {
+        LoginPage loginPage = new LoginPage(driver);
+        ProductsPage productsPage = loginPage.login("standard_user", "secret_sauce");
+
+        double actualPrice = productsPage.getProductPrice(productName);
+        Assert.assertEquals(actualPrice, expectedPrice, "Product price mismatch for: " + productName);
     }
 }

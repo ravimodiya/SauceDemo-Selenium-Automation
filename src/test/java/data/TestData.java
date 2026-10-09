@@ -1,7 +1,7 @@
-
-        package data;
+package data;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import org.testng.annotations.DataProvider;
 
@@ -19,5 +19,6 @@ public class TestData {
     public Object[][] checkoutValidationData() throws IOException {
         return ExcelDataReader.getCheckoutData();
     }
-}
 
+
+}

@@ -57,10 +57,7 @@ public class CartPage {
             ).getText();
 
             if (name.equals(productName)) {
-
-                item.findElement(
-                        By.cssSelector("button")
-                ).click();
+                item.findElement(By.cssSelector("button")).click();
 
                 waitUtils.waitForInvisibility(
                         By.xpath("//div[@class='cart_item']//div[@class='inventory_item_name' and text()='"

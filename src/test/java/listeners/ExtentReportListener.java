@@ -3,8 +3,10 @@ package listeners;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
@@ -16,7 +18,7 @@ public class ExtentReportListener implements ITestListener {
     private static final ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
     @Override
-    public void onStart(org.testng.ITestContext context) {
+    public void onStart(ITestContext context) {
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter("test-output/ExtentReport.html");
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
@@ -57,7 +59,7 @@ public class ExtentReportListener implements ITestListener {
     }
 
     @Override
-    public void onFinish(org.testng.ITestContext context) {
+    public void onFinish(ITestContext context) {
         extent.flush();
         test.remove();
     }
