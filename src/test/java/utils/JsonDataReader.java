@@ -12,7 +12,7 @@ public class JsonDataReader {
 
     public static Object[][] getLoginData() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        File file = new File("src/test/resources/testdata/loginData.json");
+        File file = new File("src/test/resources/testdata/loginData.json")  ;
 
         List<Map<String, String>> data = mapper.readValue(
                 file,
