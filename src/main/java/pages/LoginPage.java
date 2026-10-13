@@ -50,4 +50,14 @@ public class LoginPage {
     public boolean isErrorDisplayed() {
         return !driver.findElements(errorMessage).isEmpty();
     }
+
+    public boolean isLoginPageDisplayed() {
+        try {
+            return waitUtils.waitForVisibility(usernameField)
+                    .isDisplayed();
+        } catch (org.openqa.selenium.TimeoutException e) {
+            return false;
+        }
+    }
+
 }
