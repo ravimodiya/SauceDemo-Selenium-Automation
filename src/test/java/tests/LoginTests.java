@@ -19,4 +19,21 @@ public class LoginTests extends BaseTest {
             Assert.assertTrue(loginPage.isErrorDisplayed());
         }
     }
+    @Test
+    public void loginWithEmptyPasswordShowsValidationError() {
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.login("standard_user", "");
+
+        Assert.assertEquals(
+                loginPage.getErrorMessage(),
+                "Epic sadface: Password is required",
+                "An empty password should display the password-required validation message"
+        );
+
+        Assert.assertTrue(
+                loginPage.isLoginPageDisplayed(),
+                "The user should remain on the login page"
+        );
+    }
 }
