@@ -39,17 +39,46 @@ public class ExtentReportListener implements ITestListener {
         test.get().pass("Test passed");
     }
 
+
     @Override
     public void onTestFailure(ITestResult result) {
-        test.get().fail("Test failed");
-        test.get().fail(result.getThrowable());
+        ExtentTest extentTest = test.get();
+        Throwable throwable = result.getThrowable();
+
+        String className = result.getTestClass().getName();
+        String methodName = result.getMethod().getMethodName();
+
+        String failureMessage = throwable != null
+                ? throwable.getMessage()
+                : "No exception details available";
+
+        String exceptionType = throwable != null
+                ? throwable.getClass().getSimpleName()
+                : "Unknown exception";
+
+        extentTest.fail("Test failed: " + className + "." + methodName);
+        extentTest.fail("Exception: " + exceptionType);
+        extentTest.fail("Failure reason: " + failureMessage);
+
+        if (throwable != null) {
+            extentTest.fail(throwable);
+        }
 
         try {
-            TakesScreenshot screenshot = (TakesScreenshot) DriverFactory.getDriver();
-            String base64Screenshot = screenshot.getScreenshotAs(OutputType.BASE64);
-            test.get().addScreenCaptureFromBase64String(base64Screenshot, "Failure Screenshot");
+            TakesScreenshot screenshot =
+                    (TakesScreenshot) DriverFactory.getDriver();
+
+            String base64Screenshot =
+                    screenshot.getScreenshotAs(OutputType.BASE64);
+
+            extentTest.addScreenCaptureFromBase64String(
+                    base64Screenshot,
+                    "Failure Screenshot"
+            );
         } catch (Exception e) {
-            test.get().warning("Unable to capture screenshot: " + e.getMessage());
+            extentTest.warning(
+                    "Unable to capture screenshot: " + e.getMessage()
+            );
         }
     }
 
