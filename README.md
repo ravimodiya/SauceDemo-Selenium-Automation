@@ -257,4 +257,4 @@ git commit -m "Update README with framework features and test coverage"
 git push origin master
 ````
 
-This README now reflects what you've **actually implemented**, without claiming API automation or other skills you haven't added yet.
+
